@@ -1,0 +1,29 @@
+@model l05_assignment.Models.Bookmark
+
+<div class="row">
+        <div class="col-md-8 offset-md-2">
+            <div class="form-group input-wrapper">
+                <div class="m-3">
+                    <label class="control-label" asp-for="Name">Name: </label>
+                    <input class="form-control" asp-for="Name"/>
+                    <div class="text-danger">
+                        <span></span>
+                    </div>
+                </div>
+
+                <div class="row m-3">       
+                    <label class="control-label" asp-for="URL">URL: </label>
+                    <input class="form-control" asp-for="URL"/>
+                    <div class="text-danger">
+                        <span></span>
+                    </div>     
+                </div>
+
+                <div class="row m-3">         
+                    <label class="control-label" asp-for="Description">Description: </label>
+                    <textarea class="form-control" asp-for="Description"></textarea>
+                    <div class="text-danger text-right">
+                        <span></span>
+                    </div>   
+                </div>
+            </div>

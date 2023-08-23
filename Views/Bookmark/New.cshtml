@@ -1,0 +1,15 @@
+@model l05_assignment.Models.Bookmark
+
+@{
+    ViewData["Title"] = "New Bookmark";
+}
+
+<form asp-controller="Bookmark" asp-action="New" method="post">
+    <h1 class="display-4 text-center mb-5">Create a New Bookmark</h1>
+
+    <partial name="_BookmarkInput" model="Model" />
+
+    <input type="submit" class="btn btn-sm btn-primary float-end" value="Save">
+</form>
+
+<a class="btn btn-sm btn-light" asp-controller="Bookmark" asp-action="List">Back</a>

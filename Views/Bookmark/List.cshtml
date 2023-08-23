@@ -1,0 +1,48 @@
+@model IEnumerable<l05_assignment.Models.Bookmark>
+
+@{
+    ViewData["Title"] = "Bookmarks";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Manage Bookmarks</h1>
+</div>
+
+<div class="table-wrapper">
+    <a class="new-bookmark text-end"></a>
+    <table class="table bookmark-list">
+        <thead>
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Description</th>
+                <th scope="col">Link</th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var bookmark in Model)
+            {
+                <tr>
+                    <td>@bookmark.Name</td>
+                    <td>@bookmark.Description</td>
+                    <td><a href="@bookmark.URL" target="_blank">Link</a></td>
+                    <td>
+                        <a class="btn btn-light btn-sm" asp-action="Edit" asp-route-id="@bookmark.BookmarkId">
+                            <span class="glyphicon glyphicon-edit"></span> Edit
+                        </a>
+                    </td>
+                    <td>
+                        <a class="btn btn-light btn-sm" asp-controller="Bookmark" asp-action="Delete"
+                            asp-route-id="@bookmark.BookmarkId">
+                            <span class="glyphicon glyphicon-remove"></span> Remove
+                        </a>
+                    </td>
+                </tr>
+            }
+            <div>
+                <a class="btn btn-primary mt-3 clearfix" asp-controller="Bookmark" asp-action="New">New Bookmark</a>
+            </div>
+        </tbody>
+    </table>
+</div>
